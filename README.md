@@ -1,16 +1,17 @@
 C3PO
 ====
 
-Ruby translator client. Actual provider :
+Ruby translator client.
+
+Current backends :
 
  * Google Translate
  * Bing Translate
 
 Ruby 1.9.2 is strongly recommanded.
 
-
-Dependency
-----------
+Dependencies
+------------
 
 `libcurl4-gnutls-dev`
 
