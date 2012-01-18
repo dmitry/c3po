@@ -65,4 +65,6 @@ Todo
 Copyright
 ---------
 
-See LICENSE for further details.
+Copyright (c) 2011 af83
+
+Released under the MIT license
