@@ -16,7 +16,11 @@ class C3po
     # @since 0.0.1
     #
     def translate(from, to)
-      @result.translation ||= fetch @adaptor.build_query(from, to)
+      if @result.send(to)
+        @result.send(to)
+      else
+        @result.send("#{to}=", fetch(@adaptor.build_query(from, to)))
+      end
     end
 
     # Grab languages list from provider.

@@ -92,7 +92,34 @@ describe C3po do
       end
 
       it 'should return a translate string' do
-        translator.result.translation.should eq('Hallo Welt')
+        translator.result.en.should eq('Hallo Welt')
+      end
+
+      it 'should have no errors' do
+        translator.errors.should be_empty
+      end
+    end
+
+    describe 'requesting several translations' do
+      let(:uri) {'https://www.googleapis.com/language/translate/v2'}
+      let(:translator) {C3po.new('to be translated')}
+      let(:json_response) {File.open(file_path('multiple.json')).read}
+      let(:query) {{:key=>"MYAPIKEY", :q=>"to be translated", :source=>"fr", :target=>"en"}}
+      let(:query2) {{:key=>"MYAPIKEY", :q=>"to be translated", :source=>"fr", :target=>"de"}}
+
+      before do
+        request_helper(uri, query, json_response)
+        request_helper(uri, query2, json_response)
+        translator.translate(:fr, :en)
+        translator.translate(:fr, :de)
+      end
+
+      it 'should return a translate string in en' do
+        translator.result.de.should eq('Hallo Welt')
+      end
+
+      it 'should return a translate string in en' do
+        translator.result.en.should eq('Hallo Welt')
       end
 
       it 'should have no errors' do
@@ -165,7 +192,7 @@ describe C3po do
       end
 
       it 'should return a translated string' do
-        translator.result.translation.should eq("J'aime le café")
+        translator.result.en.should eq("J'aime le café")
       end
 
       it 'should have no errors' do
