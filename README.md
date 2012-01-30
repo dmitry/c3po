@@ -56,12 +56,6 @@ translator.is # => :en
 translator.is?(:de) # => false
 ```
 
-Todo
-----
-
-* More specs
-* Use it
-
 Copyright
 ---------
 
