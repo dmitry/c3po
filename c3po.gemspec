@@ -8,6 +8,7 @@ Gem::Specification.new do |s|
   s.version      = C3po::VERSION
   s.authors      = ["af83"]
   s.email        = "jboyer@af83.com"
+  s.homepage     = "https://github.com/AF83/c3po"
   s.description  = "Ruby translation client"
   s.summary      = "Ruby translation client"
   s.files        = `git ls-files lib LICENSE README.md`.split("\n")
