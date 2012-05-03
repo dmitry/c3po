@@ -14,8 +14,8 @@ Gem::Specification.new do |s|
   s.files        = `git ls-files lib LICENSE README.md`.split("\n")
   s.platform     = Gem::Platform::RUBY
   s.require_path = 'lib'
-  s.add_development_dependency "rspec", "~>2.6"
-  s.add_dependency "typhoeus", "~>0.2.4"
-  s.add_dependency "nokogiri", "~>1.5.0"
-  s.add_dependency "yajl-ruby", "~>0.8.2"
+  s.add_development_dependency "rspec", "~> 2.6"
+  s.add_dependency "typhoeus", "~> 0.2.4"
+  s.add_dependency "nokogiri", "~> 1.5.0"
+  s.add_dependency "yajl-ruby", "~> 1.0"
 end
